@@ -1,0 +1,54 @@
+Take two lists, say for example these two:
+
+	a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+	b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+Write a program that returns a list that contains only the elements that are common between the lists (without duplicates). 
+Make sure your program works on two lists of different sizes. Write this in one line of Python using at least 
+one list comprehension.
+
+Extra:
+
+Randomly generate two lists to test this
+
+Link: http://www.practicepython.org/exercise/2014/04/10/10-list-overlap-comprehensions.html
+
+Solution:
+
+#http://www.practicepython.org/exercise/2014/03/05/05-list-overlap.html
+#List Overlap Comprehensions 
+#Author: Calvin Tong
+#Date: 26-DEC-2016
+#Python version: 2.7.10.12
+
+'''
+
+Take two lists, say for example these two:
+
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+Write a program that returns a list that contains only the elements that are common between the lists (without duplicates). 
+Make sure your program works on two lists of different sizes. Write this in one line of Python using at least one list comprehension.
+
+Extra:
+
+Randomly generate two lists to test this
+
+'''
+
+import random
+
+def generateRandom():
+	a = random.sample(range(1,30), 12)
+	b = random.sample(range(1,30), 15)
+	return a, b
+
+
+a,b = generateRandom()
+
+result_overlap = [c for c in set(a) if c in b]
+
+print 'List a: ', a
+print 'List b: ', b
+print 'Common item between two lists: ', result_overlap
