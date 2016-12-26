@@ -1,0 +1,37 @@
+Ask the user for a number and determine whether the number is prime or not. 
+(For those who have forgotten, a prime number is a number that has no divisors.)
+
+Link: http://www.practicepython.org/exercise/2014/04/16/11-check-primality-functions.html
+
+Solution:
+
+#http://www.practicepython.org/exercise/2014/03/05/05-list-overlap.html
+#Check Primality Function
+#Author: Calvin Tong
+#Date: 26-DEC-2016
+#Python version: 2.7.10.12
+
+'''
+Ask the user for a number and determine whether the number is prime or not. (For those who have forgotten, a prime number is a number that has no divisors.).
+ 
+'''
+
+def PrimeFunction(x):
+	result = ''
+	if x > 2:
+		for i in range(2,x):
+			if (x % i) == 0:
+				result = str(x) + " is not a prime number"
+				break
+			else:
+				result = str(x) + " is a prime number"
+	elif x == 2:
+		result = str(x) + " is a prime number"
+	else:
+		result = str(x) + " is not a prime number"
+	
+	return result
+	
+num = int(raw_input("Enter a number: "))
+output = PrimeFunction(num)
+print output
