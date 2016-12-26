@@ -1,0 +1,29 @@
+Ask the user for a string and print out whether this string is a palindrome or not. 
+(A palindrome is a string that reads the same forwards and backwards.)
+
+Link: http://www.practicepython.org/exercise/2014/03/12/06-string-lists.html
+
+Solution:
+
+#http://www.practicepython.org/exercise/2014/03/12/06-string-lists.html
+#Ask the user for a string and print out whether this string is a palindrome or not. (A palindrome is a string that reads the same forwards and backwards. 
+#Author: Calvin Tong
+#Date: 21-Nov-2016
+#Python version: 2.7.10.12
+
+def reverse(word):
+	x = ''
+	for i in range(len(word)):
+		x += word[len(word)-1-i]
+	return x
+
+try:
+	word = raw_input('give me a word:\n')
+	x = reverse(word)
+
+	if x == word:
+		print('This is a Palindrome')
+	else:
+		print('This is NOT a Palindrome')
+except:
+	print("Something wrong")
