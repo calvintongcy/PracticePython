@@ -1,0 +1,44 @@
+Write a program (function!) that takes a list and returns a new list that contains all the elements of the first list minus all the duplicates.
+
+Extras:
+
+Write two different functions to do this - one using a loop and constructing a list, and another using sets.
+Go back and do Exercise 5 using sets, and write the solution for that in a different function.
+
+Link: http://www.practicepython.org/solution/2014/05/21/14-list-remove-duplicates-solutions.html
+
+My Solution:
+
+#http://www.practicepython.org/exercise/2014/05/15/14-list-remove-duplicates.html
+#List Remove Duplicate 
+#Author: Calvin Tong
+#Date: 29-DEC-2016
+#Python version: 2.7.10.12
+
+'''
+Write a program (function!) that takes a list and returns a new list that contains all the elements of the first list minus all the duplicates.
+
+Extras:
+
+Write two different functions to do this - one using a loop and constructing a list, and another using sets.
+Go back and do Exercise 5 using sets, and write the solution for that in a different function.
+
+'''
+
+#Using set method
+def f_RemoveDuplicate(x):
+	y = [z for z in set(x)]
+	return y
+	
+#Using loop method
+def f_RemoveDuplicate_Loop(x):
+	y = []
+	for i in x:
+		if i not in y:
+			y.append(i)
+	return y
+			
+x = ["Michele", "Robin", "Sara", "Michele","Jimmy","Sara"]
+varResult = f_RemoveDuplicate_Loop(x)
+print x
+print varResult
