@@ -1,0 +1,51 @@
+Write a program that asks the user how many Fibonnaci numbers to generate and then generates them. 
+Take this opportunity to think about how you can use functions. 
+Make sure to ask the user to enter the number of numbers in the sequence to generate.
+(Hint: The Fibonnaci seqence is a sequence of numbers where the next number in the sequence is the sum of the previous 
+two numbers in the sequence. The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …)
+
+Link: http://www.practicepython.org/exercise/2014/04/30/13-fibonacci.html
+
+My solution:
+
+#http://www.practicepython.org/exercise/2014/04/30/13-fibonacci.html
+#Fibonacci
+#Author: Calvin Tong
+#Date: 29-DEC-2016
+#Python version: 2.7.10.12
+
+'''
+Write a program that asks the user how many Fibonnaci numbers to generate and then generates them. Take this opportunity to think about 
+how you can use functions. Make sure to ask the user to enter the number of numbers in the sequence to generate.
+'''
+
+import re
+
+def fib(n):
+	if n == 0:
+		return 0
+	elif n == 1:
+		return 1
+	else:
+		res = fib(n-1) + fib(n-2)
+		return res
+
+global varResult
+varResult = ''
+
+varFib = raw_input('Enter fibonnaci number (**number must be ge 1):')
+varFib = int(varFib)
+
+if varFib < 1:
+	print 'Fibonnaci number must greater or equal to 1. Please try again'
+	exit()
+
+print 'Fibonanci Sequence for fib(' + str(varFib) + '):'
+
+for i in range(varFib):
+	varSeris = str(fib(i)) + ','
+	varResult = varResult + varSeris
+varOutput = re.findall('(.+)[,]$',varResult) #trim last ','
+
+print varOutput[0]
+print 'Answer for fib(' + str(varFib) + ') is ' + str(fib(varFib))
